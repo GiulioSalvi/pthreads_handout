@@ -36,6 +36,7 @@
 
 int main(int argc, char** argv) {
     char c = 0;
+    char buffer[1024]; strcpy(buffer, argv[0]);
 
     /* Declaration and initialization of the modules options buffers. */
     bs_module_options_t bs_opt = {false, false};
@@ -77,9 +78,9 @@ int main(int argc, char** argv) {
         else if(strcmp(argv[1], "-fz") == 0 || strcmp(argv[1], "--find-zero") == 0)
             c = '2';
         else if(strcmp(argv[1], "-bs") == 0 || strcmp(argv[1], "--bubble-sort") == 0)
-            c = '3', parse_bs_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(argv[0], " --bubble-sort"), "--help"} : argv, !help, &bs_opt);
+            c = '3', parse_bs_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(buffer, " --bubble-sort"), "--help"} : argv, !help, &bs_opt);
         else if(strcmp(argv[1], "-bsam") == 0 || strcmp(argv[1], "--bubble-sort-and-merge") == 0)
-            c = '4', parse_bsam_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(argv[0], " --bubble-sort-and-merge"), "--help"} : argv, !help, &bsam_opt);
+            c = '4', parse_bsam_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(buffer, " --bubble-sort-and-merge"), "--help"} : argv, !help, &bsam_opt);
     }
 
     do {

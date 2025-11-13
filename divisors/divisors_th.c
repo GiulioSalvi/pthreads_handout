@@ -35,6 +35,7 @@
 
 int main(int argc, char** argv) {
     char c = 0;
+    char buffer[1024]; strcpy(buffer, argv[0]);
 
     /* Declaration and initialization of the modules options buffers. */
     bpc_module_options_t bpc_opt = {false, false, 0lu};
@@ -73,11 +74,11 @@ int main(int argc, char** argv) {
         bool help = argc == 3 && (strcmp(argv[2], "-h") == 0 || strcmp(argv[2], "--help") == 0);
 
         if(strcmp(argv[1], "-bpc") == 0 || strcmp(argv[1], "--basic-primality-check") == 0)
-            c = '1', parse_bpc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(argv[0], " --basic-primality-check"), "--help"} : argv, !help, &bpc_opt);
+            c = '1', parse_bpc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(buffer, " --basic-primality-check"), "--help"} : argv, !help, &bpc_opt);
         else if(strcmp(argv[1], "-pc") == 0 || strcmp(argv[1], "--primality-check") == 0)
-            c = '2', parse_pc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(argv[0], " --primality-check"), "--help"} : argv, !help, &pc_opt);
+            c = '2', parse_pc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(buffer, " --primality-check"), "--help"} : argv, !help, &pc_opt);
         else if(strcmp(argv[1], "-dapc") == 0 || strcmp(argv[1], "--divisors-and-primality-check") == 0)
-            c = '3', parse_dapc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(argv[0], " --divisors-and-primality-check"), "--help"} : argv, !help, &dapc_opt);
+            c = '3', parse_dapc_module_options(help ? 2 : argc, help ? (char**)(char*[2]){strcat(buffer, " --divisors-and-primality-check"), "--help"} : argv, !help, &dapc_opt);
     }
 
     do {
