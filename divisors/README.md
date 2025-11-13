@@ -1,6 +1,6 @@
 # Primality Check and Divisibility Algorithms Collection
 
-In these collection some problems about primality check and divisibility algorithms are proposed.
+Some problems about primality check and divisibility algorithms are proposed in this collection.
 
 ## Proposed Problems
 
