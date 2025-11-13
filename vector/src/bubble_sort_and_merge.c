@@ -61,7 +61,7 @@ void merge(unsigned int left, unsigned int middle, unsigned int right) {
     int buf1[len1], buf2[len2]; /* Unfortunately, it is not possible to initialize arrays whose length is not known at compile-time. */
 
     /*
-      Note that the variables i below obfuscate the function-wide variable i. Hence,
+      Note that the variables i below shadow the function-wide variable i. Hence,
       the function-wide variable i remains to 0 at least until the following while
       loop: this is important to guarantee the correct behaviour of the algorithm.
     */
