@@ -25,11 +25,12 @@ In this handout's contents, some terms had been used with a specific meaning. He
 
 * _Module_: it is a collection of routines placed in files where a problem's solution is implemented.
 * _CLI_ (_Command Line Interface_): it is the set of options and flags that are passed to a program when it is invoked.
-* _Entry point_: it is a _module_'s routine which executes the _module_'s solution on a specific input. It may validate the _module_'s result if requested by the user.
-* _Demo Host_: it is the program's entry point routine: it parses the CLI's options, or asks them on the standard input if the CLI's ones are not valid. Then it calls the _module_'s _entry point_. _Nitpick_: even if the *Demo Host*s are usually placed into a _module_'s file, they are not considered to be part of the _module_ since they don't implement a solution but rather an interactive interface to a solution.
-* _Stand alone module_: it is a binary file which contains both a single _module_ and a _demo host_ for this _module_.
+* _Validation algorithm_: it is a _module_'s routine that checks the correctness of the result produced by the _module_.
+* _Entry point_: it is a _module_'s routine which executes the _module_'s solution on a specific input. It may validate the _module_'s result using the _module_'s _validation algorithm_ if requested by the user.
 * _Main thread_: it is the only thread to which we are explicitly referring to as a thread in the print-messages, comments and documentation. It is the thread which enters the _module_'s _entry point_.
 * _Worker_: a _worker_ is a thread which is carrying out some computations on behalf of the _main thread_.
+* _Demo Host_: it is the program's entry point routine: it parses the CLI's options, or asks them on the standard input if the CLI's ones are not valid. Then it calls the _module_'s _entry point_. _Nitpick_: even if the *Demo Host*s are usually placed into a _module_'s file, they are not considered to be part of the _module_ since they don't implement a solution but rather an interactive interface to a solution.
+* _Stand alone module_: it is a binary file which contains both a single _module_ and a _demo host_ for this _module_.
 
 This list partially describes, therefore not exhaustively, the architecture of the proposed solutions. If you are interested in a more detailed explanation of the architecture, please refer to the respective files in each collection.
 
