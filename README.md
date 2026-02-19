@@ -23,13 +23,15 @@ The documentation in the headers and the comments in the code may resolve any do
 
 In this handout's contents, some terms had been used with a specific meaning. Here is a list:
 
-* _Module_: it is a collection of routines placed in files where a problem's solution is implemented.
+* _Module_: it is a collection of routines and data structures placed in files where a problem's solution is implemented.
+* _Dependency_: it is a collection of routines and data structures placed in files which is used as a general tool by the *module*s.
 * _CLI_ (_Command Line Interface_): it is the set of options and flags that are passed to a program when it is invoked.
 * _Validation algorithm_: it is a _module_'s routine that checks the correctness of the result produced by the _module_.
 * _Entry point_: it is a _module_'s routine which executes the _module_'s solution on a specific input. It may validate the _module_'s result using the _module_'s _validation algorithm_ if requested by the user.
 * _Main thread_: it is the only thread to which we are explicitly referring to as a thread in the print-messages, comments and documentation. It is the thread which enters the _module_'s _entry point_.
 * _Worker_: a _worker_ is a thread which is carrying out some computations on behalf of the _main thread_.
-* _Demo Host_: it is the program's entry point routine: it parses the CLI's options, or asks them on the standard input if the CLI's ones are not valid. Then it calls the _module_'s _entry point_. _Nitpick_: even if the *Demo Host*s are usually placed into a _module_'s file, they are not considered to be part of the _module_ since they don't implement a solution but rather an interactive interface to a solution.
+* _Demo Host_: it is the program's entry point routine: it parses the _CLI_'s options, or asks them on the standard input if the _CLI_'s ones are not valid. Then it calls the _module_'s _entry point_. 
+    * _Nitpick_: even if the *Demo Host*s are usually placed into a _module_'s file, they are not considered to be part of the _module_ since they don't implement a solution but rather an interactive interface to a solution.
 * _Stand alone module_: it is a binary file which contains both a single _module_ and a _demo host_ for this _module_.
 
 This list partially describes, therefore not exhaustively, the architecture of the proposed solutions. If you are interested in a more detailed explanation of the architecture, please refer to the respective files in each collection.
@@ -38,7 +40,7 @@ This list partially describes, therefore not exhaustively, the architecture of t
 
 The handout's solutions are designed to be cross-platform on Windows, macOS and Linux. Note that for Windows systems you might use some [toolchain](https://en.wikipedia.org/wiki/Toolchain) that serves you a Unix-like environment, such as *[Windows Subsystem for Linux 2](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux)* (*WSL2*) (which is the most recommended and versatile), *MSYS2*, *Cygwin*, *MinGW* and many others.
 
-The main tool to compile and run the project is the [GNU Make](https://en.wikipedia.org/wiki/Make_(software)) file that is placed in the root folder of each collection: when cloning this repository for the first time it is **mandatory** to run the target `setup` that will set up your collection's workspace for you. Then you might want to run the target `all` for compiling all the *module*s of the collection.
+The main tools to compile and run the project are the [GNU Make](https://en.wikipedia.org/wiki/Make_(software)) files that are placed in the root folder of each collection: when cloning this repository for the first time it is **mandatory** to run the target `setup` that will set up your collection's workspace for you. Then you might want to run the target `all` for compiling all the *module*s of the collection.
 
 The *module*s compilation produces two outputs:
 * a binary object file for each _module_, which has to be linked to a _demo host_'s binary file in order to be runnable.
@@ -56,6 +58,6 @@ If you need any help about the code and the documentation, please feel free to j
 
 ## License
 
-The whole content of this handout (source code and documentation) is licensed under the _GNU General Public License 3_ as published by the _Free Software Foundation_.
+The whole content of this handout (source code and documentation) is licensed under the _GNU General Public License 3_ as published by the _[Free Software Foundation](https://fsf.org)_.
 
-You can find the original and complete copy of the license in the *[COPYING](COPYING)* file or [at the original website](https://www.gnu.org/licenses/).
+You can find the original and complete copy of the license in the _[COPYING](COPYING)_ file or [at the original website](https://www.gnu.org/licenses/).
