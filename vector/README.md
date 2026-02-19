@@ -13,7 +13,7 @@ You should attempt to solve the problems in the order they are presented, since 
     * Discuss why it is sufficient to use a volatile variable instead of an atomic variable.
     * A _validation algorithm_ is not required for this exercise because it is very likely that `0` is going to be generated at least one time.
 3. ***Bubble Sort***:
-    * Implement an algorithm that will spawn multiple *worker*s from the _main thread_: each _worker_ will receive a segment of the vector, which had been randomly populated, to bubble sort. The _main thread_ will wait for all the *worker*s to finish.
+    * Implement an algorithm that bubble sorts the segments of a vector which had been randomly populated. The _main thread_ will spawn multiple *worker*s: each _worker_ will receive a segment of the vector to bubble sort. The _main thread_ will wait for all the *worker*s to finish.
 4. ***Bubble Sort and Merge***:
     * By exploiting the solution for the previous exercise, implement an algorithm that will merge the bubble sorted segments of the vector on the _main thread_.
 
@@ -23,7 +23,7 @@ Then, comment and document the code (remember that good documentations and comme
 
 ## Resources
 
-You can use these websites to have access to explanations of some elementary algorithms that you may need to know to solve the exercises.
+You can use this website to have access to explanations of some elementary algorithms that you may need to know to solve the exercises.
 
 * [GeeksforGeeks' Bubble Sort Algorithm Walkthrough](https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/): it presents the bubble sort algorithm and provides an implementation in various languages.
-* [GeeksforGeeks' Merge Sort Algorithm Walkthrough](https://www.geeksforgeeks.org/dsa/merge-sort/): it presents the merge sort algorithm and provides an implementation in various languages; even if we are not interested in the merge sort algorithm itself, it explains the merge algorithm.
+* [GeeksforGeeks' Merge Algorithm Walkthrough](https://www.geeksforgeeks.org/dsa/merge-two-sorted-arrays/): it presents the merge algorithm between two sorted arrays and provides an implementation in various languages.
