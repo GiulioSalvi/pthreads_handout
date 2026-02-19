@@ -24,7 +24,7 @@ Then, comment and document the code (remember that good documentations and comme
 
 ## Resources
 
-You can use these websites to have access to list of prime numbers or to generate a prime number with `n` digits.
+You can use these websites to have access to a list of prime numbers or to generate a prime number with `n` digits.
 
 * [Prime Curios](https://t5k.org/curios/index.php): it lists prime numbers, and some composite numbers too, by their number of digits.
 * [BIG Primes](https://bigprimes.org): it generates `m` prime numbers with `n` digits each.
